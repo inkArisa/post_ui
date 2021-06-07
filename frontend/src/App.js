@@ -1,23 +1,34 @@
-import logo from './logo.svg';
+import React, { Component } from 'react'
 import './App.css';
+import CustomizedInput from "./components/CustomizedInput";
+import { Button, Container } from '@material-ui/core';
+import PostList from './components/PostList';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <PostList />
+        <div>
+          <div className="sms">
+            <form className="form-sms">
+              <CustomizedInput label="Phone"/>
+              <CustomizedInput label="Message"/>
+              <Button>
+                  Post sms
+              </Button>
+            </form>
+          </div>
+          <div className="bank">
+            <form className="form-bankref">
+              <CustomizedInput label="id"/>
+              <CustomizedInput label="ref1"/>
+              <CustomizedInput label="ref2"/>
+              <Button>
+                  post Bank Ref
+              </Button>
+            </form>
+          </div>
+          </div>
     </div>
   );
 }
